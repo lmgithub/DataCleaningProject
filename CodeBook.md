@@ -84,17 +84,23 @@ dtMeans has the same set of variables as ds dataset plus variable Sublect.
 Mesurement variables contain mean values for corresponding activity and subject
 
 # Data manipulation description
+
 **Step 1. Merges the training and the test sets to create one data set**
+
 1. Load the training and the test sets
  * 'train/X_train.txt': Training set,
  * 'test/X_test.txt': Test set.
 2. Merge them to one data set using rows binding.
+
 **Step 2. Extracts only the measurements on the mean and standard deviation for each measurement.** 
+
 1. Load full features list from features.txt
 2. Select only mean and standard deviation features names and feature numbers
 3. Extracts only the mean and standard deviation measurements using selected feature numbers.
 4. Set variable names using selected feature names
+
 **Step 3. Uses descriptive activity names to name the activities in the data set**
+
 1. Load activity names and labels from activity_labels.txt and name loaded variables.
 2. Load activity labels for training and test mesurements: 
  * 'train/y_train.txt': Training labels,
@@ -102,11 +108,15 @@ Mesurement variables contain mean values for corresponding activity and subject
 3. Merge measurement activity labels to one dataset using rows binding and name variable.
 4. Add measurement activity labels to measurement dataset (from Step 2) using column binding
 5. Merge measurement dataset with activity names by activity labels column.  
+
 **Step 4. Appropriately labels the data set with descriptive variable names.**
+
 All variables in dataset are named already.
 * Measurement varuables are named in Step 2, point 4.
 * Activity variables are named in Step 3, point 1.
+
 **Step 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.**
+
 1. Load subjects for training and test mesurements: 
  * 'train/subject_train.txt': Training subjects,
  * 'test/subject_test.txt': Test subjects.
