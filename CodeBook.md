@@ -112,7 +112,7 @@ Mesurement variables contain mean values for corresponding activity and subject
 **Step 4. Appropriately labels the data set with descriptive variable names.**
 
 All variables in dataset are named already.
-* Measurement varuables are named in Step 2, point 4.
+* Measurement variables are named in Step 2, point 4.
 * Activity variables are named in Step 3, point 1.
 
 **Step 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.**

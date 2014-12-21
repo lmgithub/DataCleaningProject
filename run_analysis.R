@@ -1,6 +1,3 @@
-##setwd("/home/lm/Projects/Data Clearning/Project")
-##rm(list=ls())
-
 ## 1. Merges the training and the test sets to create one data set.
 ## Data sources (info from README.txt): 
 ## - 'train/X_train.txt': Training set.
@@ -57,9 +54,30 @@ setnames(dtAct, "ActivityLabel") ## set column name
 dt <- cbind(dtAct, dt) ## Add activity labels column 
 
 ## Add names to main dataset
+## Result of Step 3
 dt <- merge(dtActivities, dt, by="ActivityLabel", all.x=TRUE)
 
 ## 4. Appropriately labels the data set with descriptive variable names. 
 ## Done on previous steps
+## Result of Step 4: dt
 
 ## 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+## Data sources (info from README.txt): 
+## Descriptions for Training and Test subjects are equivalent. 
+## - 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+
+## read subject data for measurements and merge them with main dataset
+dtTrainingSubj <- readFile("train", "subject_train.txt") ## read Training subjects. 
+dtTestSubj <- readFile("test", "subject_test.txt") ## read Test subjects. 
+dtSubj <- rbind(dtTrainingSubj, dtTestSubj) ## Merge subjects 
+setnames(dtSubj, "Subject") ## set column name
+df <- data.frame(cbind(dtSubj, dt)) ## Add subjects column and convert to data frame
+
+## reshape dataset and compute average values
+library(plyr)
+library(reshape)
+dfMelted <- melt(df, id=c("Subject", "ActivityLabel", "ActivityName")) ## melt data with Subject+Activity key
+## Result of Step 5
+dtMeans <- data.table(cast(dfMelted, Subject + ActivityLabel + ActivityName ~ variable, mean)) ## compute average values for variables (measurements) with Subject+Activity key
+
+
