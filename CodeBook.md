@@ -1,12 +1,14 @@
 # Data
 
 ## dt data table
-dt data table contains mean and standard deviation mesurements for activities.
+dt data table contains mean and standard deviation measurements for activities.
 ### dt variables
 **Activity information**
+
  1 ActivityLabel              
  2 ActivityName  
-**mesurements**
+**measurement variables**
+
  3 tBodyAcc-mean()-X          
  4 tBodyAcc-mean()-Y          
  5 tBodyAcc-mean()-Z          
@@ -67,21 +69,21 @@ dt data table contains mean and standard deviation mesurements for activities.
 60 fBodyGyro-std()-Z          
 61 fBodyAccMag-mean()         
 62 fBodyAccMag-std()          
-63 fBodyBodyAccJerkMag-mean() 
+63 fBodyBodyAccJerkMag-mean()
 64 fBodyBodyAccJerkMag-std()  
 65 fBodyBodyGyroMag-mean()    
 66 fBodyBodyGyroMag-std()     
 67 fBodyBodyGyroJerkMag-mean()
 68 fBodyBodyGyroJerkMag-std() 
 
-### Mesurement variables description
-Mesurement variables described in features_info.txt in project data.
+### Measurement variables description
+Measurement variables described in features_info.txt in project data.
 
 ## dtMeans data table
 dtMeans data table contains mean values of each variable for each activity and each subject.
 ### dtMeans variables
 dtMeans has the same set of variables as ds dataset plus variable Sublect.
-Mesurement variables contain mean values for corresponding activity and subject
+Measurement variables contain mean values for corresponding activity and subject
 
 # Data manipulation description
 
@@ -102,7 +104,7 @@ Mesurement variables contain mean values for corresponding activity and subject
 **Step 3. Uses descriptive activity names to name the activities in the data set**
 
 1. Load activity names and labels from activity_labels.txt and name loaded variables.
-2. Load activity labels for training and test mesurements: 
+2. Load activity labels for training and test measurements: 
  * 'train/y_train.txt': Training labels,
  * 'test/y_test.txt': Test labels.
 3. Merge measurement activity labels to one dataset using rows binding and name variable.
@@ -114,11 +116,12 @@ Mesurement variables contain mean values for corresponding activity and subject
 All variables in dataset are named already.
 * Measurement variables are named in Step 2, point 4.
 * Activity variables are named in Step 3, point 1.
+
 Dataset is in data table format.
 
 **Step 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.**
 
-1. Load subjects for training and test mesurements: 
+1. Load subjects for training and test measurements: 
  * 'train/subject_train.txt': Training subjects,
  * 'test/subject_test.txt': Test subjects.
 2. Merge subjects to one dataset using rows binding and name variable.
