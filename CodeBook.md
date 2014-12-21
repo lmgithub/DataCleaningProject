@@ -114,6 +114,7 @@ Mesurement variables contain mean values for corresponding activity and subject
 All variables in dataset are named already.
 * Measurement variables are named in Step 2, point 4.
 * Activity variables are named in Step 3, point 1.
+Dataset is in data table format.
 
 **Step 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.**
 
@@ -121,6 +122,6 @@ All variables in dataset are named already.
  * 'train/subject_train.txt': Training subjects,
  * 'test/subject_test.txt': Test subjects.
 2. Merge subjects to one dataset using rows binding and name variable.
-3. Add subjects to measurement dataset (from Step 4) using column binding and transform in to data frame.
-4. Split dataframe by each activity and each subject.
-5. Compute mean values for each measurement variable in Splitted dataframe and put results to datatable.
+3. Add subjects to measurement dataset (from Step 4) using column binding and transform dataset to data frame.
+4. Reshape dataset using melt function with Subject+Activity key.
+5. compute average values for variables (measurements) with Subject+Activity key and transform dataset to data table.
